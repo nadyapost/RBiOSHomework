@@ -76,7 +76,7 @@ for product in products {
 }
 ```
 
-We have also included a bunch of icons you might like to use in the Asset Catalog so take a look at those. And here are a few nice colours you might like to use:
+We have also included a bunch of icons you might like to use in the Asset Catalog so take a look at those.
 
 
 
