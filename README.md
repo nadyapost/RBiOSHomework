@@ -9,7 +9,7 @@ Good luck and we look forward to seeing your solution!
 
 ## The Task
 
-Clone this template project. It is written in Swift 3 so please continue using Swift and Xcode 8. Also use storyboards as much as is convenient and try to avoid using any other third party libraries. Assume that you will only have to support iPhones for now.
+Clone this template project. It is written in Swift 4 so please continue using Swift and Xcode 9+. Also use storyboards as much as is convenient and try to avoid using any other third party libraries. Assume that you will only have to support iPhones for now.
 
 #### Step 1
 
@@ -40,7 +40,7 @@ Too easy? Or just having the time of your life and want to keep going? Try one o
 We are looking for production ready code. This means we will be looking for all the usual programming best practises:
 
 * thoughtful architecture
-* tests
+* tests (Feel free to use Quick and Nimble if you like. But XCTest is okay)
 * documentation
 * code style and readability
 * no warnings or errors
