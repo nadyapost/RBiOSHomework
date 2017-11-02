@@ -6,10 +6,10 @@ import Foundation
 import RealmSwift
 
 class RSProduct: Object {
-    dynamic var id: String = ""
-    dynamic var workId: String = ""
-    dynamic var productType: String = ""
-    dynamic var imageUrl: String = ""
+    @objc dynamic var id: String = ""
+    @objc dynamic var workId: String = ""
+    @objc dynamic var productType: String = ""
+    @objc dynamic var imageUrl: String = ""
 
     convenience init(id: String, workId: String, productType: String, url: String) {
         self.init()
@@ -25,10 +25,10 @@ class RSProduct: Object {
 }
 
 class RSWork: Object {
-    dynamic var id: String = ""
-    dynamic var title: String = ""
-    dynamic var imageUrl: String = ""
-    dynamic var artistName: String = ""
+    @objc dynamic var id: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var imageUrl: String = ""
+    @objc dynamic var artistName: String = ""
 
     convenience init(id: String, title: String, artistName: String, url: String) {
         self.init()
@@ -44,8 +44,8 @@ class RSWork: Object {
 }
 
 class RSArtist: Object {
-    dynamic var name: String = ""
-    dynamic var avatarImageUrl: String = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var avatarImageUrl: String = ""
 
     convenience init(name: String, avatarImageUrl: String) {
         self.init()
