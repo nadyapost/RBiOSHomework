@@ -3,7 +3,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 def available_pods
-  pod 'RealmSwift', '= 3.0.1'
+  pod 'RealmSwift', '= 3.13.1'
 end
 
 target 'RedbubbleHomework' do
