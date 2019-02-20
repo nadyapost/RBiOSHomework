@@ -31,12 +31,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-kl-Aw1">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-kl-Aw1">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="nPm-kl-Aw1" firstAttribute="centerX" secondItem="KGg-7g-PW3" secondAttribute="centerX" id="PYT-Oe-Wk6"/>
+                                    <constraint firstItem="nPm-kl-Aw1" firstAttribute="width" secondItem="KGg-7g-PW3" secondAttribute="height" multiplier="1:1" id="Uvj-k8-6ep"/>
+                                    <constraint firstItem="nPm-kl-Aw1" firstAttribute="top" secondItem="KGg-7g-PW3" secondAttribute="top" id="hjF-gg-pBV"/>
+                                    <constraint firstItem="nPm-kl-Aw1" firstAttribute="centerY" secondItem="KGg-7g-PW3" secondAttribute="centerY" id="iLV-tY-PEG"/>
+                                </constraints>
+                                <size key="customSize" width="160" height="160"/>
                                 <connections>
                                     <outlet property="artworksImageView" destination="nPm-kl-Aw1" id="5xX-3u-lnA"/>
                                 </connections>
