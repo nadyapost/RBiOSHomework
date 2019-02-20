@@ -7,8 +7,8 @@ import RealmSwift
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-// let realm = try! Realm()
-//    var products: Results<RSProduct>!
+    let realm = try! Realm()
+    var products: Results<RSProduct>!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Set Layout for cell
         
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
+        layout.sectionInset = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)
         layout.minimumInteritemSpacing = 5
         layout.itemSize = CGSize(width: ((self.collectionView.frame.size.width - 20)/2), height: (self.collectionView.frame.size.height/4))
     }
@@ -36,43 +36,44 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func loadData() {
-//
-//        products = realm.objects(RSProduct.self)
-//        print (products)
-//        collectionView.reloadData()
+
+        products = realm.objects(RSProduct.self)
+        print (products)
+        collectionView.reloadData()
       
     }
     
     // Set Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
-       // return products.count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-      // var product = products[indexPath.item]
+      
+         let product = products[indexPath.item]
         
     
      
-     //   let imageUrl:URL = URL(string: product.imageUrl)!
+        let imageUrl:URL = URL(string: product.imageUrl)!
         
-        cell.artworksImageView.image = UIImage(named: "icon-heart-filled")
+        //cell.artworksImageView.image = UIImage(named: "icon-heart-filled")
+        
         // Start background thread so that image loading does not make app unresponsive
-//        DispatchQueue.global(qos: .userInitiated).async {
-//
-//            let imageData:NSData = NSData(contentsOf: imageUrl)!
-//
-//            // When from background thread, UI needs to be updated on main_queue
-//            DispatchQueue.main.async {
-//                let image = UIImage(data: imageData as Data)
-//                cell.artworksImageView.image = image
-//                //                imageView.contentMode = UIViewContentMode.scaleAspectFit
-//                //                self.view.addSubview(imageView)
-//            }
-//        }
+        DispatchQueue.global(qos: .userInitiated).async {
+            
+            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            
+            // When from background thread, UI needs to be updated on main_queue
+            DispatchQueue.main.async {
+                let image = UIImage(data: imageData as Data)
+                cell.artworksImageView.image = image
+                //                imageView.contentMode = UIViewContentMode.scaleAspectFit
+                //                self.view.addSubview(imageView)
+            }
+        }
         
         
         
