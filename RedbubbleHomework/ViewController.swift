@@ -7,20 +7,24 @@ import RealmSwift
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    let realm = try! Realm()
+// let realm = try! Realm()
+//    var products: Results<RSProduct>!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let images = [UIImage(named: "icon-heart-filled"), UIImage(named: "icon-heart"),UIImage(named: "icon-heart-filled"), UIImage(named: "icon-heart")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
+        print("load controller")
+        
+        
+        // Set Delegates
         collectionView.dataSource = self
         collectionView.delegate = self
         
         // Set Layout for cell
         
-        var layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5)
         layout.minimumInteritemSpacing = 5
         layout.itemSize = CGSize(width: ((self.collectionView.frame.size.width - 20)/2), height: (self.collectionView.frame.size.height/4))
@@ -31,20 +35,48 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
-    
+    func loadData() {
+//
+//        products = realm.objects(RSProduct.self)
+//        print (products)
+//        collectionView.reloadData()
+      
+    }
     
     // Set Datasource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return 12
+       // return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
-        // Set boarder colour
+      // var product = products[indexPath.item]
         
-        cell.artworksImageView.image = images[indexPath.item]
+    
+     
+     //   let imageUrl:URL = URL(string: product.imageUrl)!
+        
+        cell.artworksImageView.image = UIImage(named: "icon-heart-filled")
+        // Start background thread so that image loading does not make app unresponsive
+//        DispatchQueue.global(qos: .userInitiated).async {
+//
+//            let imageData:NSData = NSData(contentsOf: imageUrl)!
+//
+//            // When from background thread, UI needs to be updated on main_queue
+//            DispatchQueue.main.async {
+//                let image = UIImage(data: imageData as Data)
+//                cell.artworksImageView.image = image
+//                //                imageView.contentMode = UIViewContentMode.scaleAspectFit
+//                //                self.view.addSubview(imageView)
+//            }
+//        }
+        
+        
+        
+        // Set boarder colour
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5
         

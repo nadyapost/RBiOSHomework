@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!-- Art works-->
+        <!--Products-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,16 +31,26 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-heart" translatesAutoresizingMaskIntoConstraints="NO" id="2ch-aI-onZ" userLabel="Heart Image View">
+                                            <rect key="frame" x="130" y="130" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="30" id="Gea-4t-fF9"/>
+                                                <constraint firstAttribute="height" constant="30" id="xUY-eY-ZEr"/>
+                                            </constraints>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-kl-Aw1">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="centerX" secondItem="KGg-7g-PW3" secondAttribute="centerX" id="PYT-Oe-Wk6"/>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="width" secondItem="KGg-7g-PW3" secondAttribute="height" multiplier="1:1" id="Uvj-k8-6ep"/>
+                                    <constraint firstAttribute="trailing" secondItem="2ch-aI-onZ" secondAttribute="trailing" id="a6t-CP-uwc"/>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="top" secondItem="KGg-7g-PW3" secondAttribute="top" id="hjF-gg-pBV"/>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="centerY" secondItem="KGg-7g-PW3" secondAttribute="centerY" id="iLV-tY-PEG"/>
+                                    <constraint firstAttribute="bottom" secondItem="2ch-aI-onZ" secondAttribute="bottom" id="sbi-3h-k51"/>
                                 </constraints>
                                 <size key="customSize" width="160" height="160"/>
                                 <connections>
@@ -48,16 +58,16 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3IP-XJ-gYx">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="navBar" id="3IP-XJ-gYx">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="BYZ-38-t0r" id="VwD-wn-JDQ"/>
-                            <outlet property="delegate" destination="BYZ-38-t0r" id="bN7-FV-9a2"/>
+                            <outlet property="dataSource" destination="BYZ-38-t0r" id="2ah-lb-2l9"/>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="Qwo-Gy-ggb"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title=" Art works" largeTitleDisplayMode="always" id="S3H-H8-nr4"/>
+                    <navigationItem key="navigationItem" title="Products" id="S3H-H8-nr4"/>
                     <connections>
                         <outlet property="collectionView" destination="ePP-wX-EwH" id="lvb-He-yHD"/>
                     </connections>
@@ -71,9 +81,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="O6i-Bt-Y1K" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EYI-iu-Y8u">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="EYI-iu-Y8u">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -82,7 +98,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pjs-x4-oOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
+            <point key="canvasLocation" x="404" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-heart" width="40" height="40"/>
+    </resources>
 </document>

@@ -9,6 +9,7 @@ class RedbubbleRealm {
 
     init() {
         let defaultPath = Realm.Configuration.defaultConfiguration.fileURL?.path ?? ""
+        print("setup realm")
         let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
         if !alreadyExists {
             setupRealm()
@@ -87,5 +88,7 @@ class RedbubbleRealm {
                 realm.add(artist)
             }
         }
+        
+        
     }
 }
