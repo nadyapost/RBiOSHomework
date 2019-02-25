@@ -12,7 +12,7 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     var tap: UITapGestureRecognizer!
     
-    
+
     @IBOutlet weak var artworksImageView: UIImageView!
     
     @IBOutlet weak var heartImage: UIImageView!
@@ -21,22 +21,22 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
-    }
     
-    private func commonInit() {
+    }
+
+    private func commonInit () {
         // Set boarder colour for the cell.
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 0.5
-         //Initialize the tap gesture with an action called doubleTapped.
+        //Initialize the tap gesture with an action called doubleTapped.
         tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tap.numberOfTapsRequired = 2
         self.addGestureRecognizer(tap)
     }
-    
     @objc func handleTap(_ sender: UIGestureRecognizer) {
         
         if tap.state == .ended && self.heartImage.image == UIImage(named:"icon-heart") {
@@ -45,7 +45,6 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             self.heartImage.image = UIImage(named:"icon-heart")
         }
     }
-    
 }
 
     

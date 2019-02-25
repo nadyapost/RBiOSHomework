@@ -31,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-kl-Aw1">
+                                        <imageView tag="1000" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-kl-Aw1">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                             <gestureRecognizers/>
                                             <connections>
