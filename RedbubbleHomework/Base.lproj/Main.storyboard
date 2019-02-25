@@ -16,7 +16,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ePP-wX-EwH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ksc-gu-Fc7">
                             <size key="itemSize" width="160" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="10"/>
@@ -31,21 +31,36 @@
                                     <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-kl-Aw1">
+                                        <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nPm-kl-Aw1">
                                             <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                            <gestureRecognizers/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="SAb-zZ-Xef" appends="YES" id="InM-V5-9nZ"/>
+                                            </connections>
+                                        </imageView>
+                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-heart" translatesAutoresizingMaskIntoConstraints="NO" id="Qk0-8m-zlQ">
+                                            <rect key="frame" x="130" y="130" width="22" height="22"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="22" id="B1Q-5r-mQY"/>
+                                                <constraint firstAttribute="height" constant="22" id="rUu-9D-8q6"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Qk0-8m-zlQ" secondAttribute="trailing" constant="8" id="O8W-kS-zbm"/>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="centerX" secondItem="KGg-7g-PW3" secondAttribute="centerX" id="PYT-Oe-Wk6"/>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="width" secondItem="KGg-7g-PW3" secondAttribute="height" multiplier="1:1" id="Uvj-k8-6ep"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qk0-8m-zlQ" secondAttribute="bottom" constant="8" id="VF7-aJ-abL"/>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="top" secondItem="KGg-7g-PW3" secondAttribute="top" id="hjF-gg-pBV"/>
                                     <constraint firstItem="nPm-kl-Aw1" firstAttribute="centerY" secondItem="KGg-7g-PW3" secondAttribute="centerY" id="iLV-tY-PEG"/>
                                 </constraints>
                                 <size key="customSize" width="160" height="160"/>
                                 <connections>
                                     <outlet property="artworksImageView" destination="nPm-kl-Aw1" id="5xX-3u-lnA"/>
+                                    <outlet property="heartImage" destination="Qk0-8m-zlQ" id="ECq-Kf-wZO"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -54,16 +69,22 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="BYZ-38-t0r" id="2ah-lb-2l9"/>
-                            <outlet property="delegate" destination="BYZ-38-t0r" id="Qwo-Gy-ggb"/>
+                            <outlet property="dataSource" destination="BYZ-38-t0r" id="kt4-Ek-mTd"/>
+                            <outlet property="delegate" destination="BYZ-38-t0r" id="JOW-KS-nM4"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Products" id="S3H-H8-nr4"/>
                     <connections>
-                        <outlet property="collectionView" destination="ePP-wX-EwH" id="lvb-He-yHD"/>
+                        <outlet property="collectionView" destination="ePP-wX-EwH" id="dfs-xd-ZNO"/>
+                        <outlet property="imageTap" destination="SAb-zZ-Xef" id="fXK-ec-XyY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SAb-zZ-Xef">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="S6Z-Jo-9Nc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1079.2" y="132.26600985221674"/>
         </scene>
@@ -92,4 +113,7 @@
             <point key="canvasLocation" x="404" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon-heart" width="40" height="40"/>
+    </resources>
 </document>

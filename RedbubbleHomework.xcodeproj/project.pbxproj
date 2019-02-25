@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		133EF5D2221CD14500888854 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133EF5D1221CD14500888854 /* CollectionViewCell.swift */; };
+		133EF5D2221CD14500888854 /* CollectionVieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133EF5D1221CD14500888854 /* CollectionVieCell.swift */; };
 		A56F48A171A79B667DB1C4A6 /* Pods_RedbubbleHomeworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */; };
 		B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */; };
-		B0E6F8FF1F29648500B68A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FE1F29648500B68A69 /* ViewController.swift */; };
+		B0E6F8FF1F29648500B68A69 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FE1F29648500B68A69 /* MainController.swift */; };
 		B0E6F9021F29648500B68A69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9001F29648500B68A69 /* Main.storyboard */; };
 		B0E6F9041F29648500B68A69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9031F29648500B68A69 /* Assets.xcassets */; };
 		B0E6F9071F29648500B68A69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9051F29648500B68A69 /* LaunchScreen.storyboard */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		133EF5D1221CD14500888854 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		133EF5D1221CD14500888854 /* CollectionVieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionVieCell.swift; sourceTree = "<group>"; };
 		14756EE3A02745ABED4C187A /* Pods-RedbubbleHomeworkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedbubbleHomeworkTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedbubbleHomeworkTests/Pods-RedbubbleHomeworkTests.debug.xcconfig"; sourceTree = "<group>"; };
 		44334EC7E6FCEAA6AB49C1A2 /* Pods-RedbubbleHomeworkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedbubbleHomeworkTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedbubbleHomeworkTests/Pods-RedbubbleHomeworkTests.release.xcconfig"; sourceTree = "<group>"; };
 		57C34628A400971B0DA44813 /* Pods-RedbubbleHomework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedbubbleHomework.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedbubbleHomework/Pods-RedbubbleHomework.release.xcconfig"; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedbubbleHomeworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E6F8F91F29648500B68A69 /* RedbubbleHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedbubbleHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0E6F8FE1F29648500B68A69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0E6F8FE1F29648500B68A69 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		B0E6F9011F29648500B68A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0E6F9031F29648500B68A69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0E6F9061F29648500B68A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,8 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */,
-				B0E6F8FE1F29648500B68A69 /* ViewController.swift */,
-				133EF5D1221CD14500888854 /* CollectionViewCell.swift */,
+				B0E6F8FE1F29648500B68A69 /* MainController.swift */,
+				133EF5D1221CD14500888854 /* CollectionVieCell.swift */,
 				B0E6F9001F29648500B68A69 /* Main.storyboard */,
 				B0E6F9031F29648500B68A69 /* Assets.xcassets */,
 				B0E6F9051F29648500B68A69 /* LaunchScreen.storyboard */,
@@ -335,10 +335,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				133EF5D2221CD14500888854 /* CollectionViewCell.swift in Sources */,
+				133EF5D2221CD14500888854 /* CollectionVieCell.swift in Sources */,
 				B0E6F9251F29A88D00B68A69 /* RedbubbleRealm.swift in Sources */,
 				B0E6F9261F29A88D00B68A69 /* RealmModels.swift in Sources */,
-				B0E6F8FF1F29648500B68A69 /* ViewController.swift in Sources */,
+				B0E6F8FF1F29648500B68A69 /* MainController.swift in Sources */,
 				B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
