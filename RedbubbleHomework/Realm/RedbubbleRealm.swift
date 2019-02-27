@@ -11,6 +11,7 @@ class RedbubbleRealm {
         let defaultPath = Realm.Configuration.defaultConfiguration.fileURL?.path ?? ""
         let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
 // call setupRealm() here when using for first time.
+        //setupRealm()
         if !alreadyExists {
             setupRealm()
 
@@ -19,6 +20,7 @@ class RedbubbleRealm {
 
     // Seeds the default realm database with some products, works and artists
     private func setupRealm() {
+        
         let works: [RSWork] = [
             RSWork(id: "26527195", title: "Secret Garden", artistName: "Kristel Ann Raymundo", url: "https://ih0.redbubble.net/image.374633749.7195/flat,800x800,075,t.u4.jpg"),
             RSWork(id: "17712012", title: "Slothstronaut", artistName: "vigilanteartist", url: "https://ih0.redbubble.net/image.274633500.2012/flat,800x800,075,t.u9.jpg"),
@@ -82,6 +84,7 @@ class RedbubbleRealm {
             }
 
             for product in products {
+                print("realm \(product.id) - \(product.isFavorite)")
                 realm.add(product)
             }
 

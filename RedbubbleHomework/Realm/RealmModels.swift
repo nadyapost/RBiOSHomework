@@ -10,13 +10,16 @@ class RSProduct: Object {
     @objc dynamic var workId: String = ""
     @objc dynamic var productType: String = ""
     @objc dynamic var imageUrl: String = ""
+    @objc dynamic var isFavorite: Bool = false
 
-    convenience init(id: String, workId: String, productType: String, url: String) {
+
+    convenience init(id: String, workId: String, productType: String, url: String, isFavorite: Bool = false) {
         self.init()
         self.id = id
         self.workId = workId
         self.productType = productType
         self.imageUrl = url
+        self.isFavorite = isFavorite
     }
 
     override static func primaryKey() -> String? {

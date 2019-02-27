@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
     var tap: UITapGestureRecognizer!
+    var product: RSProduct!
 
+    
     @IBOutlet weak var artworksImageView: UIImageView!
     
     @IBOutlet weak var heartImage: UIImageView!
@@ -21,6 +24,7 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
 // Set boarder colour for the cell.
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 0.5
+        self.product = product
 //Initialize the tap gesture with an action called doubleTapped.
         tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tap.numberOfTapsRequired = 2
@@ -39,16 +43,26 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             }
         }
         
-        //        cell.heartImage.image = UIImage(named: "icon-heart")
         self.heartImage.image = product.isFavorite ? UIImage(named: "icon-heart-filled") : UIImage(named: "icon-heart")
     }
+    
     @objc func handleTap(_ sender: UIGestureRecognizer) {
-
-        if tap.state == .ended && heartImage.image == UIImage(named:"icon-heart") {
+        
+        
+        if tap.state == .ended && product.isFavorite == false {
             self.heartImage.image = UIImage(named:"icon-heart-filled")
+            favoriveProduct(true)
         } else {
             self.heartImage.image = UIImage(named:"icon-heart")
-
+            favoriveProduct(false)
+        }
+        
+    }
+    
+    func favoriveProduct(_ favorite: Bool) {
+        let realm = try! Realm()
+        try! realm.write {
+            product.isFavorite = favorite
         }
     }
     
