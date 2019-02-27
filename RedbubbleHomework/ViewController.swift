@@ -9,6 +9,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 
     let realm = try! Realm()
     var products: Results<RSProduct>!
+    
+
+    //var favorites: Results<Favorite>!
+
 
 
     @IBOutlet var collectionView: UICollectionView!
@@ -17,17 +21,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         loadData()
-        
-        
+
 // Set Delegates.
         collectionView.dataSource = self
         collectionView.delegate = self
     
-        
 // Set Layout for the cell.
-        
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)
         layout.minimumInteritemSpacing = 5
@@ -37,6 +37,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func loadData() {
 
         products = realm.objects(RSProduct.self)
+        //favorites = realm.objects(Favorite.self)
         collectionView.reloadData()
     }
 
@@ -46,29 +47,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
     }
+
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        let product = products[indexPath.item]
+        
+        cell.commonInit(product: product)
        
-        
-        let product = products[indexPath.item].imageUrl
-        let imageUrl: URL = URL(string: product)!
-        
-// Start background thread so that image loading does not make app unresponsive.
-        DispatchQueue.global(qos: .userInitiated).async {
-            let imageData: NSData = NSData(contentsOf: imageUrl)!
-// When from background thread, UI needs to be updated on main queue.
-            DispatchQueue.main.async {
-                let image = UIImage(data: imageData as Data)
-                cell.artworksImageView.image = image
-            }
-        }
         return cell
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let itemId = products[indexPath.item].id
-//
-//    }
+
+
+
 }
 
